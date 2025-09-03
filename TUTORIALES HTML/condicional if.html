@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Condicionales If - Tutorial Interactivo</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #e0e5ec;
+      margin: 0;
+      padding: 40px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #e0e5ec;
+      box-shadow: 10px 10px 30px #bebebe, -10px -10px 30px #ffffff;
+      border-radius: 20px;
+      padding: 30px;
+    }
+
+    h1, h2, h3 {
+      color: #222;
+    }
+
+    pre {
+      background: #d1d9e6;
+      padding: 15px;
+      border-radius: 10px;
+      overflow-x: auto;
+      box-shadow: inset 4px 4px 10px #c2c9d6, inset -4px -4px 10px #f0f5ff;
+    }
+
+    .quiz {
+      margin-top: 40px;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .question h3 {
+      margin-bottom: 10px;
+    }
+
+    .options label {
+      display: block;
+      margin-bottom: 5px;
+      background: #e0e5ec;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+      transition: 0.2s;
+    }
+
+    .options label:hover {
+      background: #d4d8dd;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      background: #8ca6db;
+      color: #fff;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 4px 4px 10px #aaa, -4px -4px 10px #fff;
+    }
+
+    #result {
+      margin-top: 30px;
+      font-weight: bold;
+      background: #dff0d8;
+      color: #3c763d;
+      padding: 15px;
+      border-radius: 10px;
+      display: none;
+    }
+
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎓 Condicionales en Python: Expresión <code>if</code></h1>
+
+    <h2>📘 ¿Qué es un condicional?</h2>
+    <p>Los condicionales permiten tomar decisiones en el programa. La estructura básica evalúa si una condición es verdadera y ejecuta el código correspondiente.</p>
+
+    <h3>🧱 Sintaxis básica</h3>
+    <pre><code>if condición:
+    # bloque de código si es verdadera
+</code></pre>
+
+    <h3>🔎 Ejemplo práctico</h3>
+    <pre><code>edad = int(input("¿Cuál es tu edad?: "))
+invitacion = input("¿Tienes invitación? (s/n): ")
+
+if edad >= 18:
+    if invitacion.lower() == 's':
+        print("🎉 ¡Bienvenido al evento!")
+    else:
+        print("🚫 Necesitas una invitación para entrar.")
+else:
+    print("🚫 Lo siento, debes ser mayor de edad.")</code></pre>
+
+    <h2>🧠 Funcionalidades del <code>if</code></h2>
+    <ul>
+      <li><b>if simple:</b> Evalúa una sola condición.</li>
+      <li><b>if-else:</b> Ejecuta una alternativa si la condición es falsa.</li>
+      <li><b>if-elif-else:</b> Múltiples condiciones evaluadas en orden.</li>
+      <li><b>Anidado:</b> Un <code>if</code> dentro de otro.</li>
+      <li><b>Compuesto:</b> Uso de <code>and</code>, <code>or</code>, <code>not</code>.</li>
+    </ul>
+
+    <h2>🎯 Ejercicio práctico sugerido</h2>
+    <p>Crea un sistema que:</p>
+    <ul>
+      <li>Pida nombre, edad y si es estudiante.</li>
+      <li>Si es menor de 18 y estudiante: "Tienes descuento del 50%".</li>
+      <li>Si tiene 18 o más y es estudiante: "Descuento del 30%".</li>
+      <li>Si no es estudiante: "No tienes descuento".</li>
+    </ul>
+
+    <pre><code>nombre = input("¿Cuál es tu nombre?: ")
+edad = int(input("¿Cuántos años tienes?: "))
+es_estudiante = input("¿Eres estudiante? (s/n): ")
+
+# Agrega tu lógica aquí
+</code></pre>
+
+    <div class="quiz">
+      <h2>🧪 Quiz Interactivo</h2>
+
+      <form id="quizForm">
+        <div class="question">
+          <h3>1. ¿Qué se imprime si edad=20 e invitación='n'?</h3>
+          <div class="options">
+            <label><input type="radio" name="q1" value="A" /> A. Bienvenido</label>
+            <label><input type="radio" name="q1" value="B" /> B. Necesitas invitación</label>
+            <label><input type="radio" name="q1" value="C" /> C. Debes ser mayor de edad</label>
+            <label><input type="radio" name="q1" value="D" /> D. Error de sintaxis</label>
+          </div>
+        </div>
+
+        <div class="question">
+          <h3>2. ¿Qué operador se usa para evaluar dos condiciones verdaderas?</h3>
+          <div class="options">
+            <label><input type="radio" name="q2" value="A" /> A. or</label>
+            <label><input type="radio" name="q2" value="B" /> B. ==</label>
+            <label><input type="radio" name="q2" value="C" /> C. and</label>
+            <label><input type="radio" name="q2" value="D" /> D. not</label>
+          </div>
+        </div>
+
+        <div class="question">
+          <h3>3. ¿Cuál es el orden correcto de los condicionales múltiples?</h3>
+          <div class="options">
+            <label><input type="radio" name="q3" value="A" /> A. if &gt; else &gt; elif</label>
+            <label><input type="radio" name="q3" value="B" /> B. elif &gt; if &gt; else</label>
+            <label><input type="radio" name="q3" value="C" /> C. if &gt; elif &gt; else</label>
+            <label><input type="radio" name="q3" value="D" /> D. else &gt; if &gt; elif</label>
+          </div>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Enviar respuestas</button>
+      </form>
+
+      <div id="result"></div>
+    </div>
+  </div>
+
+  <script>
+    function checkAnswers() {
+      const correctAnswers = {
+        q1: "B",
+        q2: "C",
+        q3: "C"
+      };
+
+      let score = 0;
+      let total = 3;
+      let form = document.forms["quizForm"];
+      let output = "";
+
+      for (let q in correctAnswers) {
+        let selected = form[q].value;
+        if (selected === correctAnswers[q]) {
+          score++;
+        } else {
+          output += `<p>❌ Pregunta ${q.slice(1)} incorrecta. Respuesta correcta: <b>${correctAnswers[q]}</b></p>`;
+        }
+      }
+
+      let resultBox = document.getElementById("result");
+      resultBox.style.display = "block";
+
+      resultBox.innerHTML = `<h3>✅ Puntaje final: ${score} / ${total}</h3>` + output;
+    }
+  </script>
+</body>
+</html>

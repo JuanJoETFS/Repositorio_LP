@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tutorial Neomórfico Gamificado: Listas en Python</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #e0e5ec;
+            color: #333;
+            padding: 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #222
+        }
+
+        .card {
+            background: #e0e5ec;
+            border-radius: 20px;
+            box-shadow: 9px 9px 16px #a3b1c6,
+                -9px -9px 16px #ffffff;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        pre {
+            background: #e0e5ec;
+            padding: 12px;
+            border-radius: 15px;
+            box-shadow: inset 5px 5px 10px #a3b1c6,
+                inset -5px -5px 10px #ffffff;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: monospace;
+            font-size: 0.95rem
+        }
+
+        .quiz {
+            margin-top: 20px;
+        }
+
+        .question {
+            margin-bottom: 18px;
+        }
+
+        .option {
+            display: block;
+            background: #e0e5ec;
+            border-radius: 12px;
+            padding: 10px;
+            margin: 6px 0;
+            cursor: pointer;
+            box-shadow: 5px 5px 10px #a3b1c6,
+                -5px -5px 10px #ffffff;
+            transition: 0.2s;
+        }
+
+        .option:hover {
+            background: #d1d9e6
+        }
+
+        .correct {
+            background: #c8f7c5 !important
+        }
+
+        .incorrect {
+            background: #f7c5c5 !important
+        }
+
+        .explanation {
+            margin-top: 8px;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            background: #f0faff;
+            display: none;
+        }
+
+        button {
+            background: #e0e5ec;
+            border: none;
+            border-radius: 12px;
+            padding: 10px 16px;
+            margin-top: 12px;
+            box-shadow: 5px 5px 10px #a3b1c6,
+                -5px -5px 10px #ffffff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #d1d9e6
+        }
+    </style>
+</head>
+
+<body>
+    <h1>📘 Tutorial Neomórfico Gamificado: Listas en Python</h1>
+    <div class="card">
+        <h2>1. Teoría</h2>
+        <p>
+            En Python, una <strong>lista</strong> es una colección ordenada y mutable que puede almacenar elementos de
+            diferentes tipos.
+            Son una de las estructuras más utilizadas porque permiten trabajar con conjuntos de datos de manera
+            sencilla.
+        </p>
+        <p>Principales funcionalidades:</p>
+        <ul>
+            <li>Creación de listas</li>
+            <li>Acceso por índice</li>
+            <li>Recorrido con bucles</li>
+            <li>Modificación (agregar, eliminar, actualizar)</li>
+            <li>Métodos útiles: <code>append()</code>, <code>insert()</code>, <code>remove()</code>, <code>pop()</code>,
+                <code>sort()</code>, <code>reverse()</code>, <code>len()</code></li>
+            <li>Slicing (rebanado de listas)</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>2. Ejemplo práctico</h2>
+        <p><strong>Escenario:</strong> Una tienda necesita llevar control de los precios de sus productos para calcular
+            el promedio y detectar el más costoso y el más barato.</p>
+        <pre><code># Lista de precios
+precios = [2500, 3200, 1800, 4000, 1500]
+
+# Agregar un nuevo precio
+precios.append(2800)
+
+# Eliminar un precio específico
+precios.remove(1800)
+
+# Calcular promedio de precios
+promedio = sum(precios) / len(precios)
+
+# Obtener precio más alto y más bajo
+mas_caro = max(precios)
+mas_barato = min(precios)
+
+print("Lista de precios:", precios)
+print("Promedio:", promedio)
+print("Más caro:", mas_caro)
+print("Más barato:", mas_barato)</code></pre>
+
+        <p><strong>Salida esperada:</strong></p>
+        <pre><code>Lista de precios: [2500, 3200, 4000, 1500, 2800]
+Promedio: 2800.0
+Más caro: 4000
+Más barato: 1500</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>3. Más ejemplos de uso</h2>
+        <pre><code># Ordenar precios
+top_precios = sorted(precios, reverse=True)
+print("Top precios descendente:", top_precios)
+
+# Slicing (sublista con los 3 primeros precios)
+primeros = precios[:3]
+print("Primeros 3 precios:", primeros)
+
+# Recorrer con bucle
+for p in precios:
+    print("Precio:", p)</code></pre>
+    </div>
+
+    <div class="card quiz">
+        <h2>🎮 Quiz interactivo</h2>
+
+        <div class="question">
+            <p><strong>1. ¿Cuál método se usa para agregar un elemento al final de una lista?</strong></p>
+            <div class="option" onclick="check(this, true, 'q1')">append()</div>
+            <div class="option" onclick="check(this, false, 'q1')">insert()</div>
+            <div class="option" onclick="check(this, false, 'q1')">extend()</div>
+            <div id="exp_q1" class="explanation">✅ <code>append()</code> agrega un único elemento al final de la lista.
+                <code>insert()</code> permite elegir posición y <code>extend()</code> agrega múltiples elementos.</div>
+        </div>
+
+        <div class="question">
+            <p><strong>2. Si tenemos <code>precios = [100, 200, 300]</code>, ¿qué devuelve
+                    <code>precios[1]</code>?</strong></p>
+            <div class="option" onclick="check(this, false, 'q2')">100</div>
+            <div class="option" onclick="check(this, true, 'q2')">200</div>
+            <div class="option" onclick="check(this, false, 'q2')">300</div>
+            <div id="exp_q2" class="explanation">✅ Recuerda que los índices comienzan en 0. Por eso
+                <code>precios[1]</code> es el segundo elemento: 200.</div>
+        </div>
+
+        <div class="question">
+            <p><strong>3. ¿Qué instrucción elimina y devuelve el último elemento de una lista?</strong></p>
+            <div class="option" onclick="check(this, false, 'q3')">remove()</div>
+            <div class="option" onclick="check(this, true, 'q3')">pop()</div>
+            <div class="option" onclick="check(this, false, 'q3')">del</div>
+            <div id="exp_q3" class="explanation">✅ <code>pop()</code> elimina y devuelve el último elemento si no se le
+                pasa un índice.</div>
+        </div>
+    </div>
+
+    <script>
+        function check(option, correct, qid) {
+            let siblings = option.parentElement.querySelectorAll('.option');
+            siblings.forEach(s => s.style.pointerEvents = 'none');
+            if (correct) {
+                option.classList.add('correct');
+            } else {
+                option.classList.add('incorrect');
+            }
+            document.getElementById('exp_' + qid).style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
